@@ -1,0 +1,12 @@
+.cache/
+.DS_Store
+.env
+.env.*
+*.log
+build
+logs
+node_modules/
+npm-debug.log*
+public
+yarn-debug.log*
+yarn-error.log*
