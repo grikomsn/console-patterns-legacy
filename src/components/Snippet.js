@@ -62,7 +62,7 @@ const Snippet = ({ pattern }) => {
   const disabled = !(modifier > MODIFIER_LIMIT)
 
   return (
-    <div className="fl pa2 w-50-l w-100">
+    <div className="pa2 w-50-l w-100">
       <Wrapper className="br2 pa4 silver">
         <div className="flex items-center">
           <span className="flex-grow-1">{pattern.title}</span>
@@ -76,15 +76,15 @@ const Snippet = ({ pattern }) => {
           </Btn>
         </div>
 
-        <h5 className="mb0">Snippet</h5>
-        <div className="overflow-scroll">
-          <Highlight {...props} language="javascript" />
-        </div>
-
         <h5 className="mb0">Result</h5>
         <pre className="mb4 near-white overflow-scroll">
           {pattern(modifier)}
         </pre>
+
+        <h5 className="mb0">Snippet</h5>
+        <div className="overflow-scroll">
+          <Highlight {...props} language="javascript" />
+        </div>
 
         <Btn className="w-100" onClick={copy}>
           {copiedState ? 'Copied to clipboard!' : 'Copy snippet'}
