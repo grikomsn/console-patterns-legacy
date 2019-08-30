@@ -18,8 +18,13 @@ const Wrapper = styled.div`
   }
 `
 
+const Btn = styled.button.attrs({
+  className: 'bn br2 dim f7 pa2 pointer',
+  type: 'button',
+})``
+
 const Snippet = ({ pattern }) => {
-  const { modifier } = useContext(context)
+  const { modifier, changeModifier, MODIFIER_LIMIT } = useContext(context)
 
   const children = ({
     className,
@@ -48,19 +53,42 @@ const Snippet = ({ pattern }) => {
     setTimeout(() => setCopiedState(false), 1000)
   }
 
+  const decrease = () => {
+    if (modifier > MODIFIER_LIMIT) {
+      changeModifier(modifier - 1)
+    }
+  }
+  const increase = () => changeModifier(modifier + 1)
+  const disabled = !(modifier > MODIFIER_LIMIT)
+
   return (
     <div className="fl pa2 w-50-l w-100">
-      <Wrapper className="br2 hide-child pa4 silver">
-        <h5 className="mv0">Snippet</h5>
-        <Highlight {...props} language="javascript" />
+      <Wrapper className="br2 pa4 silver">
+        <div className="flex items-center">
+          <span className="flex-grow-1">{pattern.name}</span>
+          <span className="near-white">n = {modifier}</span>
+
+          <Btn className="b ml2 w2" onClick={decrease} disabled={disabled}>
+            -
+          </Btn>
+          <Btn className="b ml2 w2" onClick={increase}>
+            +
+          </Btn>
+        </div>
+
+        <h5 className="mb0">Snippet</h5>
+        <div className="overflow-scroll">
+          <Highlight {...props} language="javascript" />
+        </div>
+
         <h5 className="mb0">Result</h5>
-        <pre className="near-white">{pattern(modifier)}</pre>
-        <button
-          type="button"
-          className="bn br2 child dim f7 pa2 pointer w-100"
-          onClick={copy}
-          children={copiedState ? 'Copied to clipboard!' : 'Copy snippet'}
-        />
+        <pre className="mb4 near-white overflow-scroll">
+          {pattern(modifier)}
+        </pre>
+
+        <Btn className="w-100" onClick={copy}>
+          {copiedState ? 'Copied to clipboard!' : 'Copy snippet'}
+        </Btn>
       </Wrapper>
     </div>
   )

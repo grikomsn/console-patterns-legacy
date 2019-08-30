@@ -1,39 +1,34 @@
 import { graphql } from 'gatsby'
-import React, { useContext } from 'react'
+import React from 'react'
 
 import * as patterns from '../../patterns'
-import { Layout, Snippet } from '../components'
-import { context } from '../store/PageProvider'
+import { ExtLink as A, Layout, Snippet } from '../components'
+
+const Patterns = () => (
+  <div>
+    {Object.values(patterns).map((p, idx) => (
+      <Snippet key={idx} pattern={p} />
+    ))}
+  </div>
+)
 
 const Index = ({ data }) => {
-  const { modifier, changeModifier } = useContext(context)
   const { siteTitle, siteDescription } = data.site.siteMetadata
 
   return (
     <Layout className="tc">
       <h1 className="b f1-l f2 mv0 tracked-tight">{siteTitle}</h1>
-      <p className="f3-l f4 i">{siteDescription}</p>
+      <p className="f3-l f4 i tracked-tight">{siteDescription}</p>
 
-      <div className="mb4">
-        <span>Set modifer (1-30): </span>
-        <input
-          className="bn br2 pa2 w-10"
-          type="number"
-          name="modifier"
-          value={modifier}
-          min={1}
-          max={30}
-          onChange={e => {
-            changeModifier(e.target.value)
-          }}
-        />
-      </div>
+      <p className="mv4">
+        Request new patterns or find some bugs?{' '}
+        <A href="https://github.com/grikomsn/console-patterns/issues">
+          Submit an issue on GitHub
+        </A>
+        .
+      </p>
 
-      <div>
-        {Object.values(patterns).map((p, idx) => (
-          <Snippet key={idx} pattern={p} />
-        ))}
-      </div>
+      <Patterns />
     </Layout>
   )
 }

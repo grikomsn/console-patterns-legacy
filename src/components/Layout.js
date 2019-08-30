@@ -25,7 +25,7 @@ const Main = styled.main`
 const Layout = ({ ...props }) => (
   <Gradient>
     <Head />
-    <div className="center dark-gray flex flex-column justify-between min-vh-100 mw8 pa4 sans-serif">
+    <div className="center dark-gray flex flex-column justify-between min-vh-100 mw8 ph4-l ph2 pv4 sans-serif">
       <Main {...props} />
       <Footer />
     </div>

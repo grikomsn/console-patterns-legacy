@@ -1,6 +1,9 @@
 import React, { createContext, useState } from 'react'
 
+const MODIFIER_LIMIT = 3
+
 export const context = createContext({
+  MODIFIER_LIMIT,
   modifier: 5,
   changeModifier: () => {},
 })
@@ -14,7 +17,7 @@ const PageProvider = ({ children }) => {
 
   return (
     <context.Provider
-      value={{ modifier, changeModifier }}
+      value={{ MODIFIER_LIMIT, modifier, changeModifier }}
       children={children}
     />
   )
