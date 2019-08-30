@@ -9,6 +9,8 @@ function TriangleD(n) {
   return out
 }
 
+TriangleD.title = 'Triangle D'
+
 TriangleD.source = `
 function TriangleD(n) {
   let out = ''

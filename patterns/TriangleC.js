@@ -9,6 +9,8 @@ function TriangleC(n) {
   return out
 }
 
+TriangleC.title = 'Triangle C'
+
 TriangleC.source = `
 function TriangleC(n) {
   let out = ''

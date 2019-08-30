@@ -65,7 +65,7 @@ const Snippet = ({ pattern }) => {
     <div className="fl pa2 w-50-l w-100">
       <Wrapper className="br2 pa4 silver">
         <div className="flex items-center">
-          <span className="flex-grow-1">{pattern.name}</span>
+          <span className="flex-grow-1">{pattern.title}</span>
           <span className="near-white">n = {modifier}</span>
 
           <Btn className="b ml2 w2" onClick={decrease} disabled={disabled}>
