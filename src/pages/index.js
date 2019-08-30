@@ -1,16 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-import * as patterns from '../../patterns'
-import { ExtLink as A, Layout, Snippet } from '../components'
-
-const Patterns = () => (
-  <div>
-    {Object.values(patterns).map((p, idx) => (
-      <Snippet key={idx} pattern={p} />
-    ))}
-  </div>
-)
+import { ExtLink as A, Layout, Patterns } from '../components'
 
 const Index = ({ data }) => {
   const { siteTitle, siteDescription } = data.site.siteMetadata
