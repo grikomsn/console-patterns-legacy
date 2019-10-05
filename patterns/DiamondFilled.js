@@ -15,7 +15,7 @@ function DiamondFilled(n) {
 }
 
 
-DiamondFilled.title = 'DiamondFilled'
+DiamondFilled.title = 'Diamond Filled'
 
 
 DiamondFilled.source = `
@@ -34,6 +34,5 @@ function DiamondFilled(n) {
   }
   return out
 }
-
 `
 export default DiamondFilled
