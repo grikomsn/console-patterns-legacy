@@ -3,7 +3,7 @@ function ArrowUpFilled(n) {
 
   for (let i = 0; i < 2*n-1; i++) {
     let k = i
-    if i>=n {k = n-i}
+    if (i>=n) {k = n-i}
     
     for (let j = 0; j < 2*n-1; j++) {
       const verticalCenter = j===n-1
