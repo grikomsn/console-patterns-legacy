@@ -2,8 +2,8 @@ function ArrowUpFilled(n) {
   let out = ''
 
   for (let i = 0; i < 2*n-1; i++) {
-    if (i<n){let k = i}
-    else {let k = n-i}
+    let k = i
+    if i>=n {k = n-i}
     
     for (let j = 0; j < 2*n-1; j++) {
       const verticalCenter = j===n-1
@@ -22,8 +22,9 @@ function ArrowUpFilled(n) {
   let out = ''
 
   for (let i = 0; i < 2*n-1; i++) {
-    if (i<n){let k = i}
-    else {let k = n-i}
+    let k = i
+    if i>=n {k = n-i}
+
     
     for (let j = 0; j < 2*n-1; j++) {
       const verticalCenter = j===n-1
