@@ -16,7 +16,7 @@ function Grid(n,hspacing,vspacing) {
   return out
 }
 
-Grid.title = 'Grid'
+Grid.title = 'Grid - Customizable'
 
 Grid.source = `
 function Grid(n,hspacing,vspacing) {
