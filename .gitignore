@@ -1,12 +1,6 @@
-.cache/
-.DS_Store
-.env
-.env.*
 *.log
+.DS_Store
+.cache
 build
-logs
-node_modules/
-npm-debug.log*
+node_modules
 public
-yarn-debug.log*
-yarn-error.log*

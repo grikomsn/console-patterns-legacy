@@ -3,17 +3,17 @@
   "description": "Collection of snippets to render logical patterns",
   "version": "1.0.0",
   "repository": "git@github.com:grikomsn/console-patterns.git",
-  "author": "Griko Nibras <grikomsn@gmail.com>",
+  "author": "Griko Nibras <git@griko.id>",
   "scripts": {
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "ssr": "yarn build && yarn serve",
-    "format": "prettier --config ./.prettierrc --write ./{patterns,src}/**/*.js",
+    "build": "yarn build:dir && yarn build:favicons && gatsby build",
     "build:dir": "mkdirp ./public/icons/",
     "build:favicons": "node scripts/favicons",
-    "build": "yarn build:dir && yarn build:favicons && gatsby build",
-    "create-index": "create-index ./{patterns,src/{components,helpers}} && yarn format",
-    "now-build": "yarn build"
+    "cbs": "yarn clean && yarn build && yarn serve",
+    "clean": "gatsby clean",
+    "create-index": "npx create-index ./patterns ./src/components ./src/helpers && yarn format",
+    "develop": "gatsby develop",
+    "format": "prettier --write {patterns,src}/**/*.js",
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "@sindresorhus/class-names": "^1.1.0",
@@ -44,6 +44,10 @@
     "node-gyp": "^6.1.0",
     "prettier": "^2.0.3"
   },
-  "private": true,
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "license": "MIT"
 }

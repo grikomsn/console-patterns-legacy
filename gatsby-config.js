@@ -8,7 +8,10 @@ module.exports = {
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
-      options: { name: 'images', path: `${__dirname}/src/images` },
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
     },
     'gatsby-plugin-remove-serviceworker',
   ],
