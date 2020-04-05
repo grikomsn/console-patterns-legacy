@@ -1,8 +1,8 @@
 {
-  "name": "console-patterns",
+  "name": "console-patterns-legacy",
   "description": "Collection of snippets to render logical patterns",
   "version": "1.0.0",
-  "repository": "git@github.com:grikomsn/console-patterns.git",
+  "repository": "git@github.com:grikomsn/console-patterns-legacy.git",
   "author": "Griko Nibras <git@griko.id>",
   "scripts": {
     "build": "yarn build:dir && yarn build:favicons && gatsby build",

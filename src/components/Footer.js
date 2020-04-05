@@ -12,7 +12,7 @@ const Footer = () => (
       <br />
       Source code licensed under the{' '}
       <A
-        href="https://github.com/grikomsn/console-patterns"
+        href="https://github.com/grikomsn/console-patterns-legacy"
         children="MIT License"
       />
       .

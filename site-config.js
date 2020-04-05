@@ -5,7 +5,7 @@ module.exports = {
   siteTitleShort: 'console-patterns',
   pageTitle: 'Collection of snippets to render logical patterns',
   siteDescription: 'Collection of snippets to render logical patterns',
-  siteUrl: 'https://console-patterns.now.sh',
+  siteUrl: 'https://console-patterns-legacy.now.sh',
   themeColor: '#357EDD',
   backgroundColor: '#FFFFFF',
   pathPrefix: null,

@@ -1,3 +1,2 @@
 User-agent: *
 Disallow:
-Sitemap: https://console-patterns.now.sh/sitemap.xml

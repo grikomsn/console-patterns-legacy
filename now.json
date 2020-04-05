@@ -1,9 +1,8 @@
 {
-  "name": "console-patterns",
   "version": 2,
-  "alias": [
-    "console-patterns"
-  ],
+  "scope": "griko",
+  "name": "console-patterns-legacy",
+  "alias": ["console-patterns-legacy"],
   "github": {
     "autoAlias": true,
     "enabled": true
