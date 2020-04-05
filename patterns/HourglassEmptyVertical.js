@@ -1,6 +1,6 @@
-function HourglassEmptyVertical(n) {  
+function HourglassEmptyVertical(n) {
   let out = ''
-  
+
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       const diag1 = i === j
@@ -17,9 +17,9 @@ function HourglassEmptyVertical(n) {
 HourglassEmptyVertical.title = 'Hourglass - Vertical - Empty'
 
 HourglassEmptyVertical.source = `
-function HourglassEmptyVertical(n) {  
+function HourglassEmptyVertical(n) {
   let out = ''
-  
+
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       const diag1 = i === j
@@ -31,6 +31,7 @@ function HourglassEmptyVertical(n) {
     out += '\\n'
   }
   return out
-}`
+}
+`
 
 export default HourglassEmptyVertical
