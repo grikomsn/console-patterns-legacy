@@ -12,7 +12,7 @@ const Index = ({ data }) => {
       <p className="f3-l f4 i tracked-tight">{siteDescription}</p>
 
       <p className="mv4">
-        You are viewing the legacy version. Visit the latest version on{' '}
+        You are viewing the legacy version, visit the latest version on{' '}
         <A href="https://console-patterns.now.sh">console-patterns.now.sh</A>.
       </p>
 
