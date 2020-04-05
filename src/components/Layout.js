@@ -1,7 +1,7 @@
 import '../stylesheets/style.css'
 import 'tachyons/css/tachyons.min.css'
 
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 
 import { Footer } from '.'
@@ -19,7 +19,7 @@ const Gradient = styled.div`
 `
 
 const Main = styled.main`
-  ${props => props.grow && 'flex-grow: 1;'}
+  ${(props) => props.grow && 'flex-grow: 1;'}
 `
 
 const Layout = ({ ...props }) => (

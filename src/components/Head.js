@@ -1,7 +1,7 @@
 import { Location } from '@reach/router'
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import React from 'react'
+import * as React from 'react'
 import { Helmet } from 'react-helmet'
 
 import schemaGenerator from '../helpers/schemaGenerator'
@@ -157,7 +157,7 @@ const Head = ({
           pageTitle,
           siteTitle,
           pageTitleFull,
-        })
+        }),
       )}
     </script>
   </Helmet>
@@ -176,7 +176,7 @@ Head.propTypes = {
   location: PropTypes.object,
 }
 
-const HeadWithQuery = props => {
+const HeadWithQuery = (props) => {
   const data = useStaticQuery(graphql`
     {
       site {

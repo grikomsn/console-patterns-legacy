@@ -1,4 +1,4 @@
-const trimProtocol = url => {
+const trimProtocol = (url) => {
   return url.replace(/^https?:\/\//i, '')
 }
 

@@ -1,10 +1,10 @@
 import { toClipboard } from 'copee'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwl'
-import React, { useContext, useState } from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 
-import { context } from '../store/PageProvider'
+import { AppContext } from '../store/PageProvider'
 
 const Wrapper = styled.div`
   background-color: rgb(1, 22, 39);
@@ -24,7 +24,9 @@ const Btn = styled.button.attrs({
 })``
 
 const Snippet = ({ pattern }) => {
-  const { modifier, changeModifier, MODIFIER_LIMIT } = useContext(context)
+  const { modifier, changeModifier, MODIFIER_LIMIT } = React.useContext(
+    AppContext,
+  )
 
   const children = ({
     className,
@@ -47,7 +49,7 @@ const Snippet = ({ pattern }) => {
   const code = pattern.source.trim()
   const props = { ...defaultProps, code, theme, children }
 
-  const [copiedState, setCopiedState] = useState(false)
+  const [copiedState, setCopiedState] = React.useState(false)
   const copy = () => {
     setCopiedState(toClipboard(code))
     setTimeout(() => setCopiedState(false), 1000)
@@ -60,6 +62,8 @@ const Snippet = ({ pattern }) => {
   }
   const increase = () => changeModifier(modifier + 1)
   const disabled = !(modifier > MODIFIER_LIMIT)
+
+  const computedPattern = React.useMemo(() => pattern(modifier), [modifier])
 
   return (
     <div className="pa2 w-50-l w-100">
@@ -77,9 +81,7 @@ const Snippet = ({ pattern }) => {
         </div>
 
         <h5 className="mb0">Result</h5>
-        <pre className="mb4 near-white overflow-scroll">
-          {pattern(modifier)}
-        </pre>
+        <pre className="mb4 near-white overflow-scroll">{computedPattern}</pre>
 
         <h5 className="mb0">Snippet</h5>
         <div className="overflow-scroll">
